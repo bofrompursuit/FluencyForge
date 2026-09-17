@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Fluency Forge — workshop exercises
+   IN //fluency — workshop exercises
    Day 1 time audit · Day 2 prompt lab · Day 3 workflow builder
    Day 4 evaluation drill · Day 5 Demo Day card
    Everything is client-side; progress persists in localStorage.
@@ -746,7 +746,7 @@
         (Math.round((before - after) * 10) / 10) + ' hours back, every week.'
       : '';
 
-    return 'I just finished Fluency Forge and shipped ' + (d['d-name'] || 'my first AI agent') + '.\n\n' +
+    return 'I just finished IN //fluency and shipped ' + (d['d-name'] || 'my first AI agent') + '.\n\n' +
       'The problem: ' + (d['d-problem'] || '—') + '\n\n' +
       'What it does: ' + (d['d-agent'] || '—') + savedLine +
       '\n\nFive days, three agents, no code. If your week has a task that never changes shape, ' +

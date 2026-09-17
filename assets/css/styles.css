@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Fluency Forge — design system
+   IN //fluency — design system
    Palette: cream base, forest-green sections, lime accent
    ========================================================================== */
 
@@ -213,17 +213,18 @@ p:last-child { margin-bottom: 0; }
   gap: 9px;
   line-height: 1;
 }
-.wordmark__mark {
-  width: 28px; height: 28px;
-  border-radius: 9px;
-  background: var(--forest);
-  color: var(--lime);
-  display: grid;
-  place-items: center;
-  font-size: 0.95rem;
+/* The "//" of the lockup. Lime is too light to read on cream, so light
+   backgrounds get lime-deep and the dark ones get full lime. */
+.wordmark__slash {
+  color: var(--lime-deep);
   text-shadow: none;
-  flex: none;
+  letter-spacing: -0.08em;
+  margin-right: -0.09em;
 }
+.section--dark .wordmark__slash,
+.footer .wordmark__slash,
+.menu .wordmark__slash,
+.sharecard__brand .wordmark__slash { color: var(--lime); }
 
 .nav__links {
   display: flex;

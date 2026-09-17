@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Fluency Forge — shared site behaviour
+   IN //fluency — shared site behaviour
    Nav shadow, full-screen menu, scroll reveal, waitlist form.
    ========================================================================== */
 (function () {

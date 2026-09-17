@@ -1,6 +1,6 @@
-# Fluency Forge
+# IN //fluency
 
-A static course website for **Fluency Forge** — a free 5-day, live-cohort course that teaches
+A static course website for **IN //fluency** — a free 5-day, live-cohort course that teaches
 marketers and operators to build practical AI agents.
 
 No build step, no backend, no dependencies. Open `index.html` or drop the folder on any static

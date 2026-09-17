@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workshop — Fluency Forge</title>
+<meta name="description" content="Five hands-on exercises from the Fluency Forge cohort: time audit, prompt lab, workflow builder, evaluation drill and your Demo Day card.">
+<meta name="theme-color" content="#0B2E1F">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230B2E1F'/><text y='72' x='50' text-anchor='middle' font-size='62' font-family='sans-serif' font-weight='bold' fill='%23C8F542'>F</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/workshop.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================================================== NAV === -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="wordmark" href="index.html">
+      <span class="wordmark__mark" aria-hidden="true">F</span>
+      Fluency Forge
+    </a>
+
+    <nav aria-label="Primary">
+      <ul class="nav__links">
+        <li><a href="index.html#build">What you'll build</a></li>
+        <li><a href="index.html#journey">The 5 days</a></li>
+        <li><a href="index.html#coaches">Coaches</a></li>
+        <li><a href="workshop.html" class="is-active">Workshop</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="btn btn--dark btn--sm" href="index.html#waitlist">Join the waitlist</a>
+      <button class="hamburger" id="menuBtn" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <button class="hamburger menu__close" id="menuClose" aria-label="Close menu" aria-expanded="true">
+    <span></span><span></span><span></span>
+  </button>
+  <nav aria-label="Menu">
+    <ul class="menu__list">
+      <li><a href="#day-1"><span class="num">DAY 1</span> Time audit</a></li>
+      <li><a href="#day-2"><span class="num">DAY 2</span> Prompt lab</a></li>
+      <li><a href="#day-3"><span class="num">DAY 3</span> Workflow builder</a></li>
+      <li><a href="#day-4"><span class="num">DAY 4</span> Evaluation drill</a></li>
+      <li><a href="#day-5"><span class="num">DAY 5</span> Demo Day card</a></li>
+      <li><a href="index.html"><span class="num">&larr;</span> Back to the course</a></li>
+    </ul>
+  </nav>
+  <div class="menu__foot">
+    <span>Free 5-day live cohort · Every Monday · 50 seats</span>
+    <a class="btn btn--lime btn--sm" href="index.html#waitlist">Save my seat</a>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ========================================================= INTRO ====== -->
+<section class="workshop-hero">
+  <div class="wrap">
+    <span class="eyebrow">Hands-on · No signup required</span>
+    <h1 style="font-size: clamp(2.2rem, 5vw, 3.6rem)">The workshop</h1>
+    <p class="hero__sub">
+      These are the five exercises cohort members work through live. Do them in order, or jump to
+      whichever day you need. Everything runs in your browser and saves as you go.
+    </p>
+  </div>
+</section>
+
+<!-- ======================================================== DAY TABS ==== -->
+<div class="daybar">
+  <div class="daybar__inner" role="tablist" aria-label="Workshop days">
+    <button class="daytab" role="tab" id="tab-1" aria-controls="day-1" aria-selected="true" data-day="1">
+      <span class="step-badge step-badge--sm"><span class="n">1</span></span>
+      <span class="daytab__label">Time audit<span>Ideate &amp; prioritize</span></span>
+    </button>
+    <button class="daytab" role="tab" id="tab-2" aria-controls="day-2" aria-selected="false" data-day="2">
+      <span class="step-badge step-badge--sm"><span class="n">2</span></span>
+      <span class="daytab__label">Prompt lab<span>Prompt engineering</span></span>
+    </button>
+    <button class="daytab" role="tab" id="tab-3" aria-controls="day-3" aria-selected="false" data-day="3">
+      <span class="step-badge step-badge--sm"><span class="n">3</span></span>
+      <span class="daytab__label">Workflow<span>Planning &amp; context</span></span>
+    </button>
+    <button class="daytab" role="tab" id="tab-4" aria-controls="day-4" aria-selected="false" data-day="4">
+      <span class="step-badge step-badge--sm"><span class="n">4</span></span>
+      <span class="daytab__label">Evaluation<span>Tools &amp; quality</span></span>
+    </button>
+    <button class="daytab" role="tab" id="tab-5" aria-controls="day-5" aria-selected="false" data-day="5">
+      <span class="step-badge step-badge--sm"><span class="n">5</span></span>
+      <span class="daytab__label">Demo Day<span>Ship &amp; share</span></span>
+    </button>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="progress-strip">
+    <span class="progress-strip__txt" id="progressTxt">0 of 5 exercises complete</span>
+    <div class="meter"><div class="meter__fill" id="progressFill"></div></div>
+    <button class="btn btn--ghost btn--sm" id="resetAll" type="button">Reset workshop</button>
+  </div>
+</div>
+
+<!-- ================================================== DAY 1 · AUDIT ===== -->
+<section class="section section--tight daypanel" id="day-1" role="tabpanel" aria-labelledby="tab-1">
+  <div class="wrap">
+    <div class="exercise-head">
+      <span class="step-badge">1</span>
+      <div>
+        <h2>The time audit</h2>
+        <p>
+          List the tasks that eat your week. Score each one on how often it comes around and how much
+          effort it takes, and we'll rank them by automation payoff. The top of that list is Agent&nbsp;#1.
+        </p>
+      </div>
+    </div>
+
+    <div class="lab">
+      <div class="panel">
+        <div class="panel__head">
+          <h3>Your repetitive tasks</h3>
+          <button class="btn btn--dark btn--sm" id="addTask" type="button">+ Add a task</button>
+        </div>
+
+        <div class="audit-table">
+          <div class="audit-head">
+            <span>Task</span>
+            <span>How often?</span>
+            <span>Effort each time</span>
+            <span>Score</span>
+            <span class="sr-only">Remove</span>
+          </div>
+          <div id="auditRows"></div>
+        </div>
+
+        <p class="hint u-mt-m">
+          Score = how often it comes around &times; effort each time, minus a penalty for tasks so big
+          they're hard to hand off cleanly. High-frequency, medium-effort work almost always beats the
+          one enormous annual task &mdash; that's the point of the exercise.
+        </p>
+      </div>
+
+      <aside class="panel panel--dark lab__side">
+        <h4 style="margin-bottom:16px">Automation priority</h4>
+        <ol class="rank-list" id="rankList"></ol>
+        <div id="verdictWrap"></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== DAY 2 · PROMPT LAB ==== -->
+<section class="section section--tight daypanel" id="day-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+  <div class="wrap">
+    <div class="exercise-head">
+      <span class="step-badge">2</span>
+      <div>
+        <h2>The prompt lab</h2>
+        <p>
+          Write a real prompt for the brief below. The checklist on the right lights up as your draft
+          picks up each of the five elements a durable prompt needs.
+        </p>
+      </div>
+    </div>
+
+    <div class="lab">
+      <div class="panel">
+        <div class="brief">
+          <h4>The brief</h4>
+          <p>
+            Turn a 1,200-word blog post about our new reporting dashboard into three social posts &mdash;
+            one for LinkedIn, two for X &mdash; aimed at marketing ops leads. Keep our voice: plain,
+            specific, no hype.
+          </p>
+        </div>
+
+        <label class="lbl" for="promptDraft">Your prompt</label>
+        <div class="promptlab__editor u-mt-s">
+          <textarea class="textarea" id="promptDraft" placeholder="You are a&hellip;"></textarea>
+          <span class="counter" id="promptCount">0 words</span>
+        </div>
+
+        <div class="u-between u-mt-m">
+          <div class="toggle-row" role="group" aria-label="Example prompt">
+            <button type="button" id="egBefore" aria-pressed="true">Weak version</button>
+            <button type="button" id="egAfter" aria-pressed="false">Strong version</button>
+          </div>
+          <button class="btn btn--ghost btn--sm" type="button" id="useExample">Load into editor</button>
+        </div>
+
+        <div class="example-box" id="exampleBox"></div>
+      </div>
+
+      <aside class="panel lab__side">
+        <h4>Prompt checklist</h4>
+        <p class="hint" style="margin-bottom:14px">Five elements. Hit all five and your output stops being a coin flip.</p>
+
+        <div class="meter"><div class="meter__fill" id="rubricFill"></div></div>
+        <p class="u-small u-mute" id="rubricScore" style="margin-bottom:18px">0 of 5 elements</p>
+
+        <ul class="rubric" id="rubricList">
+          <li data-key="role">
+            <span class="rubric__dot" aria-hidden="true">✓</span>
+            <span>
+              <span class="rubric__name">Role</span>
+              <span class="rubric__hint">Tell it who it's being. &ldquo;You are a B2B social editor&hellip;&rdquo;</span>
+            </span>
+          </li>
+          <li data-key="context">
+            <span class="rubric__dot" aria-hidden="true">✓</span>
+            <span>
+              <span class="rubric__name">Context</span>
+              <span class="rubric__hint">The audience, the product, the voice, the source material.</span>
+            </span>
+          </li>
+          <li data-key="format">
+            <span class="rubric__dot" aria-hidden="true">✓</span>
+            <span>
+              <span class="rubric__name">Format</span>
+              <span class="rubric__hint">Exactly what comes back: how many, how long, what shape.</span>
+            </span>
+          </li>
+          <li data-key="examples">
+            <span class="rubric__dot" aria-hidden="true">✓</span>
+            <span>
+              <span class="rubric__name">Examples</span>
+              <span class="rubric__hint">One good sample beats a paragraph of description.</span>
+            </span>
+          </li>
+          <li data-key="constraints">
+            <span class="rubric__dot" aria-hidden="true">✓</span>
+            <span>
+              <span class="rubric__name">Constraints</span>
+              <span class="rubric__hint">What to avoid: no hashtags, no hype, don't invent numbers.</span>
+            </span>
+          </li>
+        </ul>
+
+        <div class="feedback feedback--ok" id="promptDone" style="margin-top:18px">
+          <h4>All five, locked in.</h4>
+          <p style="margin:0">That's a prompt you can hand to a teammate and get the same output twice.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================== DAY 3 · WORKFLOW ========= -->
+<section class="section section--tight daypanel" id="day-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+  <div class="wrap">
+    <div class="exercise-head">
+      <span class="step-badge">3</span>
+      <div>
+        <h2>The workflow builder</h2>
+        <p>
+          An agent doing one big job in one shot is a coin flip. An agent doing five small ordered
+          steps is a system. Drag these into the order you'd run them &mdash; or use the arrows.
+        </p>
+      </div>
+    </div>
+
+    <div class="lab">
+      <div class="panel">
+        <div class="panel__head">
+          <h3>Competitor brief agent</h3>
+          <button class="btn btn--ghost btn--sm" type="button" id="wfShuffle">Shuffle</button>
+        </div>
+        <p class="hint" style="margin-bottom:18px">
+          The job: produce a one-page competitor brief from three URLs. Sequence the steps.
+        </p>
+
+        <div class="wf" id="wfList"></div>
+
+        <div class="u-flex u-mt-m">
+          <button class="btn btn--dark" type="button" id="wfCheck">Check my sequence</button>
+          <button class="btn btn--ghost btn--sm" type="button" id="wfReveal">Show the answer</button>
+        </div>
+
+        <div class="feedback" id="wfFeedback" role="status" aria-live="polite"></div>
+      </div>
+
+      <aside class="panel panel--dark lab__side">
+        <h4 style="margin-bottom:14px">Why order matters</h4>
+        <p class="u-small" style="color:rgba(243,241,233,.75)">
+          Each step's output is the next step's context. Draft before you analyse and the agent is
+          writing from nothing. Review before you draft and there's nothing to review.
+        </p>
+        <p class="u-small" style="color:rgba(243,241,233,.75)">
+          The two rules that catch most mistakes: <strong class="u-lime">gather first</strong>, and
+          <strong class="u-lime">review last</strong>. Everything between those is judgement.
+        </p>
+        <div class="empty-state" style="margin-top:18px">
+          On Day 3 you'll do this with your own task, and the coaches will pull it apart with you.
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================= DAY 4 · EVALUATION ========= -->
+<section class="section section--tight daypanel" id="day-4" role="tabpanel" aria-labelledby="tab-4" hidden>
+  <div class="wrap">
+    <div class="exercise-head">
+      <span class="step-badge">4</span>
+      <div>
+        <h2>The evaluation drill</h2>
+        <p>
+          Same prompt, three outputs. Each one fails a different quality check. Flag what's wrong with
+          each &mdash; this is the muscle that keeps an agent trustworthy once you stop watching it.
+        </p>
+      </div>
+    </div>
+
+    <div class="brief" style="margin-bottom:24px">
+      <h4>The task the agent was given</h4>
+      <p>
+        &ldquo;Write a two-sentence LinkedIn summary of our Q3 dashboard launch for marketing ops leads.
+        Plain voice, no hype. Only use figures from the source post: 1,400 beta users, 31% faster
+        reporting. End with a question.&rdquo;
+      </p>
+    </div>
+
+    <div class="eval-grid" id="evalGrid"></div>
+
+    <div class="u-flex u-mt-m">
+      <button class="btn btn--dark" type="button" id="evalCheck">Score my flags</button>
+      <button class="btn btn--ghost btn--sm" type="button" id="evalReset">Clear</button>
+    </div>
+
+    <div class="scoreboard" id="evalScore" hidden>
+      <span class="scoreboard__num" id="evalScoreNum">0/3</span>
+      <span class="scoreboard__txt" id="evalScoreTxt"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ DAY 5 · DEMO DAY ======== -->
+<section class="section section--tight daypanel" id="day-5" role="tabpanel" aria-labelledby="tab-5" hidden>
+  <div class="wrap">
+    <div class="exercise-head">
+      <span class="step-badge">5</span>
+      <div>
+        <h2>Demo Day card</h2>
+        <p>
+          Fill this in and it renders as a summary card on the right &mdash; the same one graduates
+          screenshot and post on Friday. Fill it in now with what you'd <em>want</em> to be true.
+        </p>
+      </div>
+    </div>
+
+    <div class="demo-layout">
+      <div class="panel">
+        <form class="demo-form" id="demoForm" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="d-builder">Your name</label>
+              <input class="input" type="text" id="d-builder" placeholder="Rosa Medina" autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="d-role">Role &amp; company</label>
+              <input class="input" type="text" id="d-role" placeholder="Lifecycle Marketing · Clearloop">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="d-name">Agent name</label>
+            <input class="input" type="text" id="d-name" placeholder="The Monday Recap Agent" maxlength="60">
+          </div>
+
+          <div class="field">
+            <label for="d-problem">The problem it solves</label>
+            <textarea class="textarea" id="d-problem" style="min-height:96px" maxlength="260"
+              placeholder="Every Monday I spent the morning pulling six dashboards into one recap nobody read until Tuesday."></textarea>
+            <span class="hint"><span id="d-problem-left">260</span> characters left</span>
+          </div>
+
+          <div class="field">
+            <label for="d-agent">What the agent does</label>
+            <textarea class="textarea" id="d-agent" style="min-height:96px" maxlength="260"
+              placeholder="Pulls the metrics, flags anything off more than 10% week over week, drafts the recap in our format, and reviews its own draft before posting to Slack."></textarea>
+            <span class="hint"><span id="d-agent-left">260</span> characters left</span>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="d-before">Hours before (per week)</label>
+              <input class="input" type="number" id="d-before" min="0" max="80" step="0.5" placeholder="4">
+            </div>
+            <div class="field">
+              <label for="d-after">Hours after (per week)</label>
+              <input class="input" type="number" id="d-after" min="0" max="80" step="0.5" placeholder="0.5">
+            </div>
+          </div>
+
+          <div class="u-flex">
+            <button class="btn btn--dark" type="button" id="demoCopy">Copy as LinkedIn post</button>
+            <button class="btn btn--ghost btn--sm" type="button" id="demoClear">Clear card</button>
+          </div>
+          <div class="form-msg" id="demoMsg" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <div class="sharecard" id="shareCard">
+        <div class="sharecard__top">
+          <span class="sharecard__brand">
+            <span class="wordmark__mark" aria-hidden="true">F</span> Fluency Forge
+          </span>
+          <span class="sharecard__badge">Certified AI Builder</span>
+        </div>
+
+        <h3 class="sharecard__name is-placeholder" id="c-name">Your agent&rsquo;s name</h3>
+        <p class="sharecard__by is-placeholder" id="c-by">Your name · role &amp; company</p>
+
+        <div class="sharecard__block">
+          <h5>The problem</h5>
+          <p class="is-placeholder" id="c-problem">What was eating your week before you built this.</p>
+        </div>
+
+        <div class="sharecard__block">
+          <h5>The agent</h5>
+          <p class="is-placeholder" id="c-agent">What it does now, in your own words.</p>
+        </div>
+
+        <div class="beforeafter">
+          <div>
+            <div class="ba__val" id="c-before">&mdash;</div>
+            <div class="ba__lbl">Hours before</div>
+          </div>
+          <span class="ba__arrow" aria-hidden="true">&rarr;</span>
+          <div>
+            <div class="ba__val is-after" id="c-after">&mdash;</div>
+            <div class="ba__lbl">Hours after</div>
+          </div>
+          <div class="ba__saved" id="c-saved">Add your hours to see the payoff</div>
+        </div>
+
+        <div class="sharecard__foot">
+          <span>Cohort 14 · Demo Day</span>
+          <span>fluencyforge.co</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================== CLOSING ===== -->
+<section class="section section--dark">
+  <div class="wrap u-center">
+    <div class="section-head section-head--center">
+      <h2>Liked the exercises?</h2>
+      <p>This is maybe a tenth of what the live cohort covers. It's free, it's 60 minutes a day, and it starts Monday.</p>
+    </div>
+    <a class="btn btn--lime" href="index.html#waitlist">Join the Waitlist &rarr;</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__bottom" style="border-top:0; padding-top:0">
+      <a class="wordmark" href="index.html">
+        <span class="wordmark__mark" aria-hidden="true">F</span> Fluency Forge
+      </a>
+      <span>&copy; <span id="year">2026</span> Fluency Forge · Free 5-day live cohort</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+<script src="assets/js/workshop.js"></script>
+</body>
+</html>
